@@ -1,4 +1,4 @@
-"Configs for Alphastar."
+@"Configs for Alphastar."
 
 load("@my_deps//:requirements.bzl", "requirement")
 load("//alphastar:pytype.bzl", "pytype_strict_library")
