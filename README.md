@@ -107,3 +107,21 @@ Disclaimer: This is not an official Google product.
 If you use the agents, architectures and offline RL benchmarks published in this
 repository, please cite our
 [AlphaStar Unplugged](https://openreview.net/pdf?id=Np8Pumfoty) paper.
+
+def convert_to_mention(text):
+    # حذف فضاهای اضافی و تقسیم متن به کلمات
+    words = text.strip().split()
+    
+    # اگر هیچ کلمه‌ای وجود نداشته باشد، خروجی خالی برمی‌گرداند
+    if not words:
+        return ""
+    
+    # تبدیل کلمات به فرمت @mention
+    # @ در ابتدای کلمات و هر کلمه با حرف بزرگ شروع می‌شود
+    mention = "@" + "".join(word.capitalize() for word in words)
+    return mention
+
+# ورودی از کاربر
+input_text = input("عبارت خود را وارد کنید: ")
+mention = convert_to_mention(input_text)
+print("مقدار تولید شده:", mention)
